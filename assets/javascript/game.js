@@ -19,7 +19,7 @@ var alphabet = ["a", "b", "c", "d", "e", "f", "g", "h",
 winsDisplay.innerHTML = wins;
 lossesDisplay.innerHTML = losses;
 turnsLeftDisplay.innerHTML = turns;
-lettersChosenDisplay.innerHTML = lettersChosen;
+
 
 // StartIt() funtion is called to generate a random numger.
 startIt()
@@ -36,7 +36,7 @@ document.onkeyup = function user(event) {
     var userGuess = event.key;
     // Adds gues to the lettersChosen array variable above?
     lettersChosen.push(userGuess);
-    
+    lettersChosenDisplay.innerHTML = lettersChosen;
     console.log("This is the random comp choice: " + computerChoice);
     console.log("This is user guess: " + userGuess);
 

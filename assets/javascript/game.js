@@ -1,23 +1,25 @@
 
-// Variables that hook into html tags
+// Variables that hook into html tags.
 var winsDisplay = document.getElementById("wins");
 var lossesDisplay = document.getElementById("losses");
 var turnsLeftDisplay = document.getElementById("turnsLeft");
-
+var lettersChosenDisplay = document.getElementById("lettersChosen")
 
 /* Set global variables: wins, losses (each los takes away a guess) 
 */
 var wins = 0;
 var losses = 0;
 var turns = 9;
+var lettersChosen = 0;
 var alphabet = ["a", "b", "c", "d", "e", "f", "g", "h",
     "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s",
     "t", "u", "v", "w", "x", "y", "z",];
 
-// Displays initial stats
+// Displays initial stats by pulling from abouve variables
 winsDisplay.innerHTML = wins;
 lossesDisplay.innerHTML = losses;
 turnsLeftDisplay.innerHTML = turns;
+lettersChosenDisplay.innerHTML = lettersChosen;
 
 // StartIt() funtion is called to generate a random numger.
 startIt()

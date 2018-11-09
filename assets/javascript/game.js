@@ -10,7 +10,7 @@ var lettersChosenDisplay = document.getElementById("lettersChosen")
 var wins = 0;
 var losses = 0;
 var turns = 9;
-var lettersChosen = 0;
+var lettersChosen = [];
 var alphabet = ["a", "b", "c", "d", "e", "f", "g", "h",
     "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s",
     "t", "u", "v", "w", "x", "y", "z",];
@@ -34,6 +34,9 @@ function startIt() {
 // When a key is pressed the choice is recorded into userGuess
 document.onkeyup = function user(event) {
     var userGuess = event.key;
+    // Adds gues to the lettersChosen array variable above?
+    lettersChosen.push(userGuess);
+    
     console.log("This is the random comp choice: " + computerChoice);
     console.log("This is user guess: " + userGuess);
 

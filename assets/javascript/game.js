@@ -27,9 +27,17 @@ startIt()
 // function to generate random number which was called abouve. 
 function startIt() {
     // Random computer choice
+    turns = 9;
+    console.log("Reset turns after loss: " + turns);
+    lettersChosen = [];
     computerChoice = alphabet[Math.floor(Math.random() * alphabet.length)];
     console.log(computerChoice);
+    winsDisplay.innerHTML = wins;
+    lossesDisplay.innerHTML = losses;
+    turnsLeftDisplay.innerHTML = turns;
+    lettersChosenDisplay.innerHTML = lettersChosen;
 }
+
 
 // When a key is pressed the choice is recorded into userGuess
 document.onkeyup = function user(event) {
@@ -69,10 +77,9 @@ document.onkeyup = function user(event) {
         // Displays losses in html document
         lossesDisplay.innerHTML = losses;
 
-        turns = 9;
-        console.log("Reset turns after loss: " + turns);
-
         alert("Bummer! Try again.")
+
+
 
         startIt();
     }

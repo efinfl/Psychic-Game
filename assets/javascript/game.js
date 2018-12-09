@@ -5,8 +5,8 @@ var lossesDisplay = document.getElementById("losses");
 var turnsLeftDisplay = document.getElementById("turnsLeft");
 var lettersChosenDisplay = document.getElementById("lettersChosen")
 
-/* Set global variables: wins, losses (each los takes away a guess) 
-*/
+/* Global variables: wins, losses 
+(each los takes away a guess) */
 var wins = 0;
 var losses = 0;
 var turns = 9;
@@ -15,7 +15,7 @@ var alphabet = ["a", "b", "c", "d", "e", "f", "g", "h",
     "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s",
     "t", "u", "v", "w", "x", "y", "z",];
 
-// Displays initial stats by pulling from abouve variables
+// Displays initial stats by pulling from above variables
 winsDisplay.innerHTML = wins;
 lossesDisplay.innerHTML = losses;
 turnsLeftDisplay.innerHTML = turns;
@@ -28,10 +28,10 @@ startIt()
 function startIt() {
     // Random computer choice
     turns = 9;
-    console.log("Reset turns after loss: " + turns);
     lettersChosen = [];
     computerChoice = alphabet[Math.floor(Math.random() * alphabet.length)];
     console.log(computerChoice);
+    
     winsDisplay.innerHTML = wins;
     lossesDisplay.innerHTML = losses;
     turnsLeftDisplay.innerHTML = turns;
@@ -45,13 +45,10 @@ document.onkeyup = function user(event) {
     // Adds gues to the lettersChosen array variable above?
     lettersChosen.push(userGuess);
     lettersChosenDisplay.innerHTML = lettersChosen;
-    console.log("This is the random comp choice: " + computerChoice);
-    console.log("This is user guess: " + userGuess);
 
     // Checks if userGuess and computerChoice are the same. If true wins tick up on and the folloiwn happens
     if (userGuess === computerChoice) {
         wins++;
-        console.log(wins);
 
         // Dislplays wins in html doc by pulling wins variable applying it to winsDisplay
         winsDisplay.innerHTML = wins;
@@ -64,7 +61,6 @@ document.onkeyup = function user(event) {
     // Takes away a turn if user guess doesn't match the computer guess
     else {
         turns--;
-        console.log("Turns left" + turns);
         // Displays turns left in html doc by pulling turns variable and assigning it to turnsLeftDisplay variable
         turnsLeftDisplay.innerHTML = turns;
     }
@@ -72,7 +68,6 @@ document.onkeyup = function user(event) {
     if (turns === 0) {
         // If turns have run out, add a loss, reset turns to 9 and restart game.
         losses++;
-        console.log("Losses: " + losses);
 
         // Displays losses in html document
         lossesDisplay.innerHTML = losses;
@@ -85,13 +80,6 @@ document.onkeyup = function user(event) {
     }
 
 }
-
-// If its the same give user a score.
-
-// If not take away a guess
-
-// when guess equals 0, end game and give them a loss.
-
 
 
 
